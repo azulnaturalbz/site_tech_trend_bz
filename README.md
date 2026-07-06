@@ -2,6 +2,8 @@
 
 Static one-page sales site for Tech Trend Mobile BZ.
 
+Live site: `https://techtrend.silvatech.bz/`
+
 ## Source Data
 
 - Facebook page: `https://www.facebook.com/profile.php?id=61575110823443`
