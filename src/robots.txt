@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techtrend.silvatech.bz/sitemap.xml
