@@ -188,6 +188,19 @@ p {
   margin-top: 0;
 }
 
+h1,
+h2,
+h3,
+p,
+a,
+span,
+strong,
+summary,
+dt,
+dd {
+  overflow-wrap: break-word;
+}
+
 h1 {
   max-width: 13ch;
   margin-bottom: 22px;
@@ -369,6 +382,16 @@ h3 {
   margin-bottom: 36px;
 }
 
+.section-heading > *,
+.answer-panel > *,
+.product-card > div,
+.visit-copy,
+.share-copy,
+.contact-list,
+.qr-card {
+  min-width: 0;
+}
+
 .section-heading p:not(.eyebrow) {
   color: var(--muted);
   font-size: 1.05rem;
@@ -422,6 +445,7 @@ h3 {
 
 .product-topline {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -745,6 +769,14 @@ details p {
     font-size: 2.35rem;
   }
 
+  .catalog-section .section-heading h2 {
+    max-width: 9ch;
+  }
+
+  .catalog-section .section-heading p:not(.eyebrow) {
+    max-width: 32ch;
+  }
+
   .hero-actions,
   .share-actions,
   .trust-strip {
@@ -773,11 +805,56 @@ details p {
 
   .product-card {
     grid-template-columns: 1fr;
+    position: relative;
+    isolation: isolate;
+    align-items: end;
+    min-height: 560px;
+    padding: 12px;
   }
 
   .product-card img {
-    aspect-ratio: 4 / 3;
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    aspect-ratio: auto;
+    width: 100%;
+    height: 100%;
     min-height: 0;
+    object-fit: cover;
+  }
+
+  .product-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(247, 249, 252, 0.18), rgba(247, 249, 252, 0.58) 42%, rgba(247, 249, 252, 0.88));
+  }
+
+  .product-card > div {
+    width: 100%;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(215, 221, 226, 0.92);
+    border-radius: var(--radius-card);
+    box-shadow: 0 12px 32px rgba(20, 26, 35, 0.14);
+    backdrop-filter: blur(14px);
+  }
+
+  .product-card p {
+    color: #2e3a59;
+  }
+
+  .product-topline {
+    display: grid;
+    justify-content: start;
+    gap: 4px;
+  }
+
+  .product-topline strong {
+    justify-self: start;
+    white-space: nowrap;
   }
 
   .contact-list div {
