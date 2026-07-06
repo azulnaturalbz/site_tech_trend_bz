@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://techtrend.silvatech.bz/sitemap.xml
+Llms: https://techtrend.silvatech.bz/llms.txt

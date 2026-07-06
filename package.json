@@ -4,6 +4,7 @@
   "private": true,
   "description": "Single-page client website for Tech Trend Mobile BZ.",
   "scripts": {
+    "generate:assets": "node scripts/generate-assets.mjs",
     "build": "node scripts/build.mjs",
     "dev": "python3 -m http.server 5177 --directory src",
     "start": "python3 -m http.server 4177 --directory dist",
@@ -12,5 +13,8 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
   }
 }
